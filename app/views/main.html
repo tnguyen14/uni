@@ -1,0 +1,33 @@
+<div class="hero-unit">
+	<h1>Checkbook June 2013</h1>
+	<p>You now have</p>
+	<ul>
+		<li ng-repeat="thing in awesomeThings">{{thing}}</li>
+	</ul>
+	<p>installed.</p>
+	<h3>Enjoy coding! - Yeoman</h3>
+
+	<h2>Transactions</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Merchant</th>
+				<th>Item Description</th>
+				<th>Amount</th>
+				<th>Type</th>
+				<th>Source</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="tranx in transactions">
+				<td>{{tranx.date | date:'mediumDate'}}</td>
+				<td>{{tranx.merchant}}</td>
+				<td>{{tranx.item_desc}}</td>
+				<td>${{tranx.amount/100}}</td>
+				<td>{{tranx.type}}</td>
+				<td>{{tranx.source}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

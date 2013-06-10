@@ -1,11 +1,27 @@
 <div class="hero-unit">
 	<h1>Checkbook June 2013</h1>
-	<p>You now have</p>
-	<ul>
-		<li ng-repeat="thing in awesomeThings">{{thing}}</li>
-	</ul>
-	<p>installed.</p>
-	<h3>Enjoy coding! - Yeoman</h3>
+
+	<form id="add-transaction" ng-submit="addTransaction">
+		<h1>Add a transaction</h1>
+		<label for="date">Date</label>
+			<input type="date" name="date"/>
+		<label for="merchant">Merchant</label>
+			<input type="text" name="merchant" placeholder="Market Basket"/>
+		<label for="item_desc">Item Description</label>
+			<input type="text" name="item_desc" placeholder="Book"/>
+		<label for="amount">Amount</label>
+			<input type="number" step="0.01" placeholder="6.93"/>
+		<label for="type">Type</label>
+			<select name="type">
+				<option ng-repeat="type in types" value="{{type.value}}">{{type.name}}</option>
+			</select>
+		<label for="source">Source</label>
+			<select name="source">
+				<option ng-repeat="source in sources" value="{{source.value}}">{{source.name}}</option>
+			</select>
+
+		<input type="submit" value="Add" />
+	</form>
 
 	<h2>Transactions</h2>
 	<table>
@@ -24,7 +40,7 @@
 				<td>{{tranx.date | date:'mediumDate'}}</td>
 				<td>{{tranx.merchant}}</td>
 				<td>{{tranx.item_desc}}</td>
-				<td>${{tranx.amount/100}}</td>
+				<td>{{tranx.amount/100|currency}}</td>
 				<td>{{tranx.type}}</td>
 				<td>{{tranx.source}}</td>
 			</tr>

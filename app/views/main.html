@@ -35,7 +35,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="tranx in transactions">
-				<td>{{tranx.date | date:'mediumDate'}}</td>
+				<td>{{tranx.date.format() | date:'mediumDate'}}</td>
 				<td>{{tranx.merchant}}</td>
 				<td>{{tranx.itemDesc}}</td>
 				<td>{{tranx.amount/100|currency}}</td>

@@ -10,15 +10,27 @@ define(['app', 'moment'], function(app, moment) {
 				merchant: 'Stop & Shop',
 				itemDesc: 'Groceries',
 				amount: 10123,
-				type: 'Groceries',
-				source: 'Reading Personal'
+				type: {
+					name: 'Groceries',
+					value: 'groceries'
+				},
+				source: {
+					name: 'Reading Personal',
+					value: 'reading-personal'
+				}
 			},{
-				date: new Date('Sun Jun 9 2013'),
+				date: moment('Sun Jun 9 2013'),
 				merchant: 'Dunkin Donut',
 				itemDesc: 'Coffee',
 				amount: 354,
-				type: 'Dine Out',
-				source: 'Reading Business'
+				type: {
+					name: 'Dine out',
+					value: 'dine-out'
+				},
+				source: {
+					name: 'Reading Business',
+					value: 'reading-business'
+				}
 			}
 		];
 		$scope.types = [
@@ -33,9 +45,8 @@ define(['app', 'moment'], function(app, moment) {
 			{name: 'Reading Personal', value: 'reading-personal'}
 		];
 		$scope.addTransaction = function() {
-			console.log($scope.date);
 			$scope.transactions.push({
-				date: new Date($scope.date),
+				date: moment($scope.date),
 				merchant: $scope.merchant,
 				itemDesc: $scope.itemDesc,
 				amount: $scope.amount*100,

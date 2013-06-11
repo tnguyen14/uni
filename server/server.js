@@ -3,7 +3,8 @@ var express = require('express'),
 	http = require('http'),
 	server = http.createServer(app),
 	transactions = require('./routes/transactions'),
-	mongo = require('mongodb');
+	mongo = require('mongodb'),
+	MongoClient = mongo.MongoClient;
 
 
 app.use(express.logger('dev'));

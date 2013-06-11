@@ -1,23 +1,21 @@
 <div class="hero-unit">
 	<h1>Checkbook June 2013</h1>
 
-	<form id="add-transaction" ng-submit="addTransaction">
+	<form id="add-transaction" ng-submit="addTransaction()">
 		<h1>Add a transaction</h1>
 		<label for="date">Date</label>
-			<input type="date" name="date"/>
+			<input type="date" name="date" ng-model="date"/>
 		<label for="merchant">Merchant</label>
-			<input type="text" name="merchant" placeholder="Market Basket"/>
+			<input type="text" name="merchant" ng-model="merchant" placeholder="Market Basket"/>
 		<label for="item_desc">Item Description</label>
-			<input type="text" name="item_desc" placeholder="Book"/>
+			<input type="text" name="item_desc" ng-model="item_desc" placeholder="Book"/>
 		<label for="amount">Amount</label>
-			<input type="number" step="0.01" placeholder="6.93"/>
+			<input type="number" step="0.01" ng-model="amount" placeholder="6.93"/>
 		<label for="type">Type</label>
-			<select name="type">
-				<option ng-repeat="type in types" value="{{type.value}}">{{type.name}}</option>
+			<select name="type" ng-model="type" ng-options="type as type.name for type in types">
 			</select>
 		<label for="source">Source</label>
-			<select name="source">
-				<option ng-repeat="source in sources" value="{{source.value}}">{{source.name}}</option>
+			<select name="source" ng-model="source" ng-options="source as source.name for source in sources">
 			</select>
 
 		<input type="submit" value="Add" />
@@ -41,8 +39,8 @@
 				<td>{{tranx.merchant}}</td>
 				<td>{{tranx.item_desc}}</td>
 				<td>{{tranx.amount/100|currency}}</td>
-				<td>{{tranx.type}}</td>
-				<td>{{tranx.source}}</td>
+				<td>{{tranx.type.name}}</td>
+				<td>{{tranx.source.name}}</td>
 			</tr>
 		</tbody>
 	</table>

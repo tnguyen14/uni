@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="uniApp">
+  <body ng-app="uni">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -27,14 +27,19 @@
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
 
+    <!-- not loading scripts individually
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
+    -->
 
     <!-- build:js scripts/scripts.js -->
+    <!--
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    -->
+    <script data-main="scripts/main" src="components/requirejs/require.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

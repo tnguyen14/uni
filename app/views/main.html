@@ -7,8 +7,8 @@
 			<input type="date" name="date" ng-model="date"/>
 		<label for="merchant">Merchant</label>
 			<input type="text" name="merchant" ng-model="merchant" placeholder="Market Basket"/>
-		<label for="item_desc">Item Description</label>
-			<input type="text" name="item_desc" ng-model="item_desc" placeholder="Book"/>
+		<label for="itemDesc">Item Description</label>
+			<input type="text" name="itemDesc" ng-model="itemDesc" placeholder="Book"/>
 		<label for="amount">Amount</label>
 			<input type="number" step="0.01" ng-model="amount" placeholder="6.93"/>
 		<label for="type">Type</label>
@@ -37,7 +37,7 @@
 			<tr ng-repeat="tranx in transactions">
 				<td>{{tranx.date | date:'mediumDate'}}</td>
 				<td>{{tranx.merchant}}</td>
-				<td>{{tranx.item_desc}}</td>
+				<td>{{tranx.itemDesc}}</td>
 				<td>{{tranx.amount/100|currency}}</td>
 				<td>{{tranx.type.name}}</td>
 				<td>{{tranx.source.name}}</td>

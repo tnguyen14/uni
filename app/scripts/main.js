@@ -1,4 +1,5 @@
 /* global require */
+/* global console:true */
 'use strict';
 
 require.config({
@@ -14,7 +15,7 @@ require.config({
 			exports: 'moment'
 		}
 	}
-})
+});
 
 require(['angular', 'app', 'controllers/main'], function(angular){
 	console = window.console || (console = { log: function(){} });

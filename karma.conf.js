@@ -7,16 +7,26 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'app/components/angular/angular.js',
-  'app/components/angular-mocks/angular-mocks.js',
-  'app/scripts/*.js',
-  'app/scripts/**/*.js',
-  'test/mock/**/*.js',
-  'test/spec/**/*.js'
+  REQUIRE,
+  REQUIRE_ADAPTER,
+  // 'app/components/angular/angular.js',
+  // 'app/components/angular-mocks/angular-mocks.js',
+  // 'app/components/moment/moment.js',
+  // 'app/scripts/*.js',
+  // 'app/scripts/**/*.js',
+  // 'test/mock/**/*.js',
+  // 'test/spec/**/*.js',
+  {pattern: 'app/components/**/*.js', included: false},
+  {pattern: 'app/scripts/**/*.js', included: false},
+  {pattern: 'test/spec/**/*.js', included: false},
+
+  'test/test-main.js'
 ];
 
 // list of files to exclude
-exclude = [];
+exclude = [
+	'app/scripts/main.js'
+];
 
 // test results reporter to use
 // possible values: dots || progress || growl

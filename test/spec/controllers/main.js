@@ -1,22 +1,30 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+// define(['app', 'moment'], function(app, moment) {
+// 	describe('Controller: MainCtrl', function () {
+// 		console.log(app);
+// 		// load the controller's module
+// 		beforeEach(app);
 
-  // load the controller's module
-  beforeEach(module('uni'));
+// 		var MainCtrl,
+// 			scope;
 
-  var MainCtrl,
-    scope;
+// 		// Initialize the controller and a mock scope
+// 		beforeEach(inject(function ($controller, $rootScope) {
+// 			scope = $rootScope.$new();
+// 			MainCtrl = $controller('MainCtrl', {
+// 				$scope: scope
+// 			});
+// 			console.log(scope);
+// 			console.log(MainCtrl);
+// 		}));
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-    });
-  }));
+// 		it('should display some transactions', function () {
+// 			expect(scope.transactions.length).toBe(2);
+// 		});
+// 	});
+// });
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
-});
+// define([''], function(){
+// 	console.log('okay');
+// });

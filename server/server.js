@@ -9,6 +9,7 @@ var express = require('express'),
 
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+console.log(process.env.MONGOLAB_URI);
 
 MongoClient.connect(process.env.MONGOLAB_URI, function(err, db){
 	if (err) throw err;
@@ -20,5 +21,5 @@ app.get('/', function(req, res){
 })
 app.get('/transactions', transactions.findAll);
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 console.log( "Express server is listening on port %d in %s mode", server.address().port, app.settings.env);

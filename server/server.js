@@ -9,11 +9,10 @@ var express = require('express'),
 
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
-console.log(process.env.MONGOLAB_URI);
 
 MongoClient.connect(process.env.MONGOLAB_URI, function(err, db){
 	if (err) throw err;
-	console.log("Connected to Database " + db);
+	console.log('Connected to the database');
 });
 
 app.get('/', function(req, res){
